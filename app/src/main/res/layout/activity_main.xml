@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Cost Of Service"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="How was the service ? "
+        android:textSize="10sp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <RadioButton
+            android:id="@+id/rb_amazing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amazing (20%)"
+            android:layout_marginLeft="20dp"
+            />
+        <RadioButton
+            android:id="@+id/rb_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good (18%)"
+            android:layout_marginLeft="20dp"
+            />
+        <RadioButton
+            android:id="@+id/rb_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK (15%)"
+            android:layout_marginLeft="20dp"
+            />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Round up tip?"
+            android:layout_marginLeft="20dp"
+            />
+        <Switch
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CALCULATE"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip Ammount"
+        android:textSize="12sp"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        />
+
+</LinearLayout>
