@@ -1,85 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical"
-    >
+    android:background="#DFDDDD">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:hint="Cost Of Service"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="15sp"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:text="How was the service ? "
-        android:textSize="10sp"
-        android:layout_marginLeft="20dp"
-        />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
-        <RadioButton
-            android:id="@+id/rb_amazing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Amazing (20%)"
-            android:layout_marginLeft="20dp"
-            />
-        <RadioButton
-            android:id="@+id/rb_good"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Good (18%)"
-            android:layout_marginLeft="20dp"
-            />
-        <RadioButton
-            android:id="@+id/rb_ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="OK (15%)"
-            android:layout_marginLeft="20dp"
-            />
-    </RadioGroup>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintInside"
+        android:layout_width="350dp"
+        android:layout_height="650dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:layout_width="400dp"
-        android:layout_height="30dp"
-        android:orientation="horizontal"
-        >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Round up tip?"
-            android:layout_marginLeft="20dp"
-            />
-        <Switch
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"/>
-    </LinearLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CALCULATE"
-        android:layout_margin="10dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tip Ammount"
-        android:textSize="12sp"
-        android:layout_gravity="right"
-        android:layout_marginRight="10dp"
-        />
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="600dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintEnd_toEndOf="@id/constraintInside"
+            app:layout_constraintStart_toStartOf="@id/constraintInside"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="20dp"
+            android:backgroundTint="#D1CACA">
 
-</LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cVCostOf"
+                android:layout_marginTop="50dp"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="25dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Cost of Service"
+                    android:gravity="center"
+                    />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="105dp"
+                android:text="How Was Your Service ?"
+                />
+
+            <RadioGroup
+                android:id="@+id/rGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="70dp"
+                >
+                <RadioButton
+                    android:layout_marginTop="100dp"
+                    android:id="@+id/rbInsideSatu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    />
+                <RadioButton
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/rbInsideDua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+
+                    />
+                <RadioButton
+                    android:layout_marginTop="50dp"
+
+                    android:id="@+id/rbInsideTiga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+
+                    />
+            </RadioGroup>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rbSatu"
+                android:layout_marginTop="150dp"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="15dp"
+                >
+                <ImageView
+                    android:id="@+id/ivAmazing"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/select"
+                    android:visibility="invisible"
+                    />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/amaze"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amazing (20%)"
+                    android:layout_gravity="center"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rbDua"
+                android:layout_marginTop="250dp"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/ivGood"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/select"
+                    android:visibility="invisible"
+                    />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/good"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good (18%)"
+                    android:layout_gravity="center"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rbTiga"
+                android:layout_marginTop="350dp"
+                android:layout_width="250dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/ivOk"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/select"
+                    android:visibility="invisible"
+                    />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ok"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ok (15%)"
+                    android:layout_gravity="center"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/roundUp"
+                android:layout_marginTop="450dp"
+                android:layout_width="150dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="118dp"
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Round Up Tip ?"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="10sp"
+
+                    />
+                <Switch
+                    android:layout_marginLeft="100dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </androidx.cardview.widget.CardView>
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="500dp"
+                android:layout_marginEnd="31dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/button_color"
+                android:text="SEND TIP"
+                android:textAllCaps="false"
+                android:textColor="@color/white"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
