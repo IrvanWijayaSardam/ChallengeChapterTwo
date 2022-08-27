@@ -1,5 +1,6 @@
 package com.irvanw.challengechaptertwo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -11,6 +12,7 @@ import android.widget.*
 import androidx.cardview.widget.CardView
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
+import org.w3c.dom.Text
 import java.lang.ref.WeakReference
 import java.text.DecimalFormat
 import kotlin.math.roundToInt
@@ -32,16 +34,14 @@ class MainActivity : AppCompatActivity() {
 
         val radioGrp = findViewById<RadioGroup>(R.id.rGroup)
 
-        var moneyReal : String
-
         val selectedAmazing : ImageView = findViewById(R.id.ivAmazing)
         val selectedGood : ImageView = findViewById(R.id.ivGood)
         val selectedOk : ImageView = findViewById(R.id.ivOk)
 
         val edtMoney : EditText = findViewById(R.id.edtCOS)
 
-        edtMoney.setMaskingMoney("Rp. ")
 
+        edtMoney.setMaskingMoney("Rp. ")
 
         val strEdtMoney = edtMoney.setMaskingMoney("Rp. ")
 
@@ -51,8 +51,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "0 Money", Toast.LENGTH_SHORT).show()
             } else {
                 if(selectedAmazing.isVisible){
-                    removeKoma(edtMoney.text.toString())
-                    MyCustomDialog().show(supportFragmentManager, "MyCustomFragment")
+                    var total: Int = hitungTIp(removeKoma(edtMoney.text.toString()).toInt(),0.20)
+                    //Toast.makeText(this, "${total.toString()}", Toast.LENGTH_LONG).show()
+                    openThanks(total.toString())
                 } else if(selectedGood.isVisible){
                     Toast.makeText(this, "Selected good", Toast.LENGTH_SHORT).show()
                 } else if(selectedOk.isVisible){
@@ -123,7 +124,7 @@ class MainActivity : AppCompatActivity() {
     fun hitungTIp(cos : Int,presentase:Double):Int{
         var hasilHitung : Int
 
-        hasilHitung = (cos / presentase).roundToInt()
+        hasilHitung = (cos * presentase).roundToInt()
 
         return hasilHitung
     }
@@ -133,24 +134,14 @@ class MainActivity : AppCompatActivity() {
         var lenghthRp = rp.length
         var withoutRp = rp.substring(4,lenghthRp)
         var withtoutComa:String = withoutRp.replace(",","")
-        Toast.makeText(this, "${withtoutComa}", Toast.LENGTH_SHORT).show()
         return  withtoutComa
     }
 
-}
-
-class MyCustomDialog: DialogFragment() {
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        getDialog()!!.getWindow()?.setBackgroundDrawableResource(R.drawable.round_corner);
-        return inflater.inflate(R.layout.dialogue_thanks, container, false)
+    fun openThanks(total : String){
+        val intent = Intent(this@MainActivity,activity_thanks::class.java)
+        intent.putExtra("total",total)
+        startActivity(intent)
     }
 
-    override fun onStart() {
-        super.onStart()
-        val width = (resources.displayMetrics.widthPixels * 0.85).toInt()
-        val height = (resources.displayMetrics.heightPixels * 0.40).toInt()
-        dialog!!.window?.setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT)
-    }
 
 }
