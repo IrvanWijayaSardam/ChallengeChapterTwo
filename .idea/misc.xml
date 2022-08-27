@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Irvan/Programming/AndroidStudioProject/MSIB/Challenge/app/src/main/res/drawable/round_corner.xml" value="0.304" />
         <entry key="..\:/Irvan/Programming/AndroidStudioProject/MSIB/Challenge/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Irvan/Programming/AndroidStudioProject/MSIB/Challenge/app/src/main/res/layout/dialogue_thanks.xml" value="0.3614583333333333" />
       </map>
     </option>
   </component>
